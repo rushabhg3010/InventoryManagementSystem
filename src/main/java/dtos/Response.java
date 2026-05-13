@@ -6,11 +6,15 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import enums.UserRole;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 @Data
 @Builder
+@Getter
+@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Response {
 
@@ -43,4 +47,5 @@ public class Response {
 	private List<TransactionDTO> transactions;
 
 	private final LocalDateTime timestamp = LocalDateTime.now();
+
 }
