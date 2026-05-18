@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class AuthFilter extends OncePerRequestFilter {
 	
-	private final JWTUtils jwtUtils;
+	private final JwtUtils jwtUtils;
     private final UserDetailsService customUserDetailsService;
 
     
