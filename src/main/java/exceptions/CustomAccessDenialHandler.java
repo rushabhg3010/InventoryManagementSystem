@@ -11,17 +11,13 @@ import dtos.Response;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import tools.jackson.databind.ObjectMapper;
 
 @Component
+@RequiredArgsConstructor
 public class CustomAccessDenialHandler implements AccessDeniedHandler {
 	private final ObjectMapper objectMapper;
-
-    // Manually writing the constructor fixes the Eclipse error immediately
-    public CustomAccessDenialHandler(ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
-    }
-
 
     @Override
     public void handle(HttpServletRequest request,
