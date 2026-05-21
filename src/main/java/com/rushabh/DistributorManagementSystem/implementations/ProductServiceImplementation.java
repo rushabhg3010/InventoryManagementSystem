@@ -35,7 +35,7 @@ public class ProductServiceImplementation implements ProductService {
 	    private static final String IMAGE_DIRECTORY = System.getProperty("user.dir") + "/product-images/";
 
 	    //AFTER YOUR FRONTEND IS SETUP CHANGE THE IMAGE DIRECTORY TO YHE FRONTEND YOU ARE USING
-	    private static final String IMAGE_DIRECTORY_2 = "/Users/dennismac/phegonDev/ims-react/public/products/";
+	    private static final String IMAGE_DIRECTORY_2 = "C:\\Full Stack Development\\Projects\\Images\\";
 
 	    @Override
 	    public Response saveProduct(ProductDTO productDTO, MultipartFile imageFile) {
@@ -56,7 +56,7 @@ public class ProductServiceImplementation implements ProductService {
 	        if (imageFile != null && !imageFile.isEmpty()) {
 	            log.info("Image file exist");
 //	            String imagePath = saveImage(imageFile); //use this when you haven't setup your frontend
-	            String imagePath = saveImage2(imageFile); //use this when you ave set up your frontend locally but haven't deployed to produiction
+	            String imagePath = saveImage2(imageFile); //use this when you have set up your frontend locally but haven't deployed to produiction
 
 	            System.out.println("IMAGE URL IS: " + imagePath);
 	            productToSave.setImageUrl(imagePath);
@@ -199,7 +199,7 @@ public class ProductServiceImplementation implements ProductService {
 	        File directory = new File(IMAGE_DIRECTORY);
 
 	        if (!directory.exists()) {
-	            directory.mkdir();
+	            directory.mkdirs();
 	            log.info("Directory was created");
 	        }
 	        //generate unique file name for the image
@@ -230,7 +230,7 @@ public class ProductServiceImplementation implements ProductService {
 	        File directory = new File(IMAGE_DIRECTORY_2);
 
 	        if (!directory.exists()) {
-	            directory.mkdir();
+	            directory.mkdirs();
 	            log.info("Directory was created");
 	        }
 	        //generate unique file name for the image
